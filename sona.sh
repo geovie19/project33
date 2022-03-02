@@ -4,17 +4,24 @@ echo
 #Date : February 23,2022
 #Description : Installation of Sonarqube server on Centos7
 
-echo "How to install and configure SonarQube on CentOS 7"
+echo "Installation of Java"
 echo 
 sudo yum update -y
 sudo yum install java-11-openjdk-devel -y
 sudo yum install java-11-openjdk -y
+echo "Installation of packages"
+sudo yum install wget -y
+sudo yum install unzip -y
 echo
+echo "Download SonarQube on the server"
 sleep 2 
 cd /opt 
 sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.3.0.51899.zip
-echo 
+echo "Extract SonarQube  package"
+echo
 sudo unzip /opt/sonarqube-9.3.0.51899.zip
+echo"Change ownership to the user and start SonarQube"
+echo
 sudo chown -R vagrant:vagrant /opt/sonarqube-9.3.0.51899
 cd /opt/sonarqube-9.3.0.51899/bin/linux-x86-64
 ./sonar.sh start
