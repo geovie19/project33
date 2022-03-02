@@ -33,6 +33,7 @@ echo "Connect to the SonarQube server through the browser. It uses port 9000"
 echo "You can find your IP address below and copy and paste it in your browser with :9000"
 yum install net-tools -y 
 echo
+fi
 ifconfig | grep 192
 echo "copy and paste your IP address in your browser this way: ip-address:9000"
 echo "Login in SonarQue by using : User admin and Password admin"
